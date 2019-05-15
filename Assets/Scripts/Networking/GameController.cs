@@ -8,15 +8,14 @@ namespace Networking
     {
         public ManagerOfNetworks NetworkManager;
 
-        public void Start()
+        private void Update()
         {
-            PlayerContainer.OnLocalPlayerAdded += OnLocalPlayerAdded;
-        }
-
-        private void OnLocalPlayerAdded(Player localplayer)
-        {
-            var pos = Random.value * 3;
-            localplayer.SpawnSomething(new Vector3(pos, 0, 0));
+            if (PlayerContainer.LocalPlayer && Input.GetMouseButtonDown(0))
+            {
+                var x = Random.value * 6 - 3;
+                var y = Random.value * 6 - 3;
+                PlayerContainer.LocalPlayer.SpawnSomething(new Vector3(x, y, 0));
+            }
         }
 
         private void OnGUI()

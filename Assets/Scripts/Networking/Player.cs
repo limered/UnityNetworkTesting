@@ -26,7 +26,7 @@ namespace Networking
         private void CmdSpawnSomething(Vector3 position)
         {
             var player = Object.Instantiate(SpawnablePrefab, position, Quaternion.identity, transform);
-            NetworkServer.SpawnWithClientAuthority(player, PlayerContainer.LocalPlayer.gameObject);
+            NetworkServer.Spawn(player);
         }
     }
 }

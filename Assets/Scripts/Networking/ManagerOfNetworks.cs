@@ -20,22 +20,21 @@ namespace Networking
             matchMaker.ListMatches(0, 10, string.Empty, false, 0, 0, MatchMaker_OnListMatches);
         }
 
-        private void MatchMaker_OnCreateMatch(bool success, string extendedinfo, MatchInfo responsedata)
+        private void MatchMaker_OnCreateMatch(bool success, string extendedInfo, MatchInfo responseData)
         {
-            OnMatchCreate(success, extendedinfo, responsedata);
+            OnMatchCreate(success, extendedInfo, responseData);
         }
-
-        private void MatchMaker_OnListMatches(bool success, string extendedinfo, List<MatchInfoSnapshot> responsedata)
+        private void MatchMaker_OnListMatches(bool success, string extendedInfo, List<MatchInfoSnapshot> responseData)
         {
-            var firstMatch = responsedata.First();
+            var firstMatch = responseData.First();
 
             matchMaker.JoinMatch(firstMatch.networkId, string.Empty, string.Empty, string.Empty, 0, 0,
                 MatchMaker_OnJoinMatch);
         }
 
-        private void MatchMaker_OnJoinMatch(bool success, string extendedinfo, MatchInfo responsedata)
+        private void MatchMaker_OnJoinMatch(bool success, string extendedInfo, MatchInfo responseData)
         {
-            OnMatchJoined(success, extendedinfo, responsedata);
+            OnMatchJoined(success, extendedInfo, responseData);
         }
 
         private void Start()

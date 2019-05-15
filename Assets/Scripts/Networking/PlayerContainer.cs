@@ -11,7 +11,7 @@ namespace Networking
 
         public static Player LocalPlayer
         {
-            get { return _localPlayer; }
+            get => _localPlayer;
             set
             {
                 _localPlayer = value;
