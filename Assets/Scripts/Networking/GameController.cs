@@ -12,9 +12,7 @@ namespace Networking
         {
             if (PlayerContainer.LocalPlayer && Input.GetMouseButtonDown(0))
             {
-                var x = Random.value * 6 - 3;
-                var y = Random.value * 6 - 3;
-                PlayerContainer.LocalPlayer.SpawnSomething(new Vector3(x, y, 0));
+                PlayerContainer.LocalPlayer.SpawnSomething();
             }
         }
 
